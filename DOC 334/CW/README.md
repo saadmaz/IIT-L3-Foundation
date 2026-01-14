@@ -3,9 +3,6 @@ Project Overview
 The DropMe Cab Service Console Application is a command-line utility designed for passengers in the Kingdom of Miranda. It provides an automated way to calculate trip fares between cities, choose preferred modes of transport, apply promotional discounts, and generate detailed digital invoices.
 
 
-
-
-
 Features
 
 Fare Calculation: Instantly calculate the gross price for travel between various cities based on distance and vehicle type.
