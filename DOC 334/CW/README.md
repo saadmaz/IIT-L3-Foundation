@@ -1,123 +1,114 @@
-DropMe Cab Service Console Application
-Project Overview
-The DropMe Cab Service Console Application is a command-line utility designed for passengers in the Kingdom of Miranda. It provides an automated way to calculate trip fares between cities, choose preferred modes of transport, apply promotional discounts, and generate detailed digital invoices.
+# 🚕 DropMe Cab Service Console Application
 
+## Project Overview
 
-Features
+**DropMe Cab Service** is a Python-based console application designed for passengers in the Kingdom of **Miranda**. The system automates cab fare calculation between cities, allows users to select transport modes, applies promotional and random discounts, and generates detailed digital invoices for every trip.
 
-Fare Calculation: Instantly calculate the gross price for travel between various cities based on distance and vehicle type.
+🔗 **Project Deployment:**
+👉 [https://dropme.saadmaz.com](https://dropme.saadmaz.com)
 
+---
 
+## ✨ Features
 
-Transport Modes: Users can choose between three vehicle types:
+### Fare Calculation
 
+* Automatically calculates the **gross fare** based on:
 
+  * Distance between cities
+  * Selected vehicle type
 
-Trishaw: The default mode (Multiplier: 1).
+### Transport Modes
 
+Users can choose from three transport options:
 
+* **Trishaw** (Default)
+  Multiplier: `1`
+* **Car** (Premium comfort)
+  Multiplier: `2`
+* **Van** (Larger groups)
+  Multiplier: `3`
 
-Car: Premium comfort (Multiplier: 2).
+### Promo Codes
 
+* Supports multiple promo codes (`pro1` to `pro15`)
+* Each promo code applies a **flat-rate KMD discount** to the total fare
 
-Van: For larger groups (Multiplier: 3).
+### Random Discounts
 
+* A bonus feature where selected users may randomly receive a **5 KMD discount**
 
-Promo Codes: Support for multiple promo codes (e.g., pro1 to pro15) that provide flat-rate KMD reductions on the total bill.
+### Invoice Generation
 
+* Automatically generates a **`.txt` invoice** for every completed trip
+* Each invoice is saved using a **unique timestamp-based filename**
 
+---
 
-Random Discounts: An independent feature that may randomly apply a 5 KMD reduction to the fare for some passengers.
+## 🛠 System Requirements
 
+* **Language:** Python 3.x
+* **Standard Modules Used:**
 
+  * `sys` – System-level operations
+  * `datetime` – Captures real-time trip and invoice data
+  * `random` – Handles random discounts and unique file naming
+  * `math` – Imported for extended fare calculations
 
-Invoice Generation: Automatically generates a .txt invoice for every trip, saved with a unique timestamped filename.
+---
 
+## ▶️ Operating Guidelines
 
-System Requirements
+1. **Start Location**
+   Enter the city you are departing from.
 
-Language: Python 3.x.
+2. **Destination**
+   Enter the city you wish to travel to.
 
-Standard Modules Used:
+3. **Transport Mode**
+   Choose one of:
 
+   * Trishaw
+   * Car
+   * Van
+     *(Input is case-insensitive)*
 
-sys: For system-specific functions.
+4. **Promotions**
+   When prompted, enter a valid promo code to apply a discount.
 
+5. **Receipt**
+   After completion, the console displays the filename of the generated invoice.
 
+---
 
-datetime: To capture real-time trip data for invoices.
+## 🌍 Supported Cities
 
+The DropMe service operates across the following cities in Miranda:
 
+* Alvin
+* Jamz
+* Razi
+* Mali
+* Zuhar
 
-random: To handle random discount logic and unique file naming.
+---
 
+## 🧾 Invoice Format
 
+Each generated invoice includes:
 
-math: (Imported for extended calculations).
-
-
-Operating Guidelines
-
-Start Location: Enter the city you are departing from.
-
-
-Destination: Enter the city you wish to reach.
-
-Transport Mode: Input Trishaw, Car, or Van. The system is case-insensitive.
-
-
-
-Promotions: When prompted, enter a valid promo code to receive a discount.
-
-
-
-Receipt: Upon completion, the console will display the name of the generated text file containing your receipt.
-
-
-Supported Cities
-The service operates across the following cities in Miranda:
-
-
-Alvin
-
-Jamz
-
-Razi
-
-Mali
-
-Zuhar
-
-Invoice Format
-The generated invoice text files include the following data points:
-
-
-Date and Time: Precise moment of the booking.
-
-
-Locations: Start and end city names.
-
-
-Amount: The original gross fare before any deductions.
-
-
-Promo/Reduction: Specific amounts deducted via codes or random luck.
-
-
-Final Payment: The total amount due after all reductions.
-
-Credits
-
-Student ID: 20221804.
-
-
-Student Name: Muhammed Saad Mazhar.
-
-
-Module: DOC 333 - Computer Programming.
-
-
-Module Leader: Mr. Nishan Saliya.
-
-
-Institution: Informatics Institute of Technology.
+* **Date & Time** – Exact booking timestamp
+* **Trip Locations** – Start and destination cities
+* **Gross Amount** – Fare before deductions
+* **Discounts Applied** – Promo code and/or random discount
+* **Final Payment** – Total payable amount
+
+---
+
+## 🎓 Credits
+
+* **Student ID:** 20221804
+* **Student Name:** Muhammed Saad Mazhar
+* **Module:** DOC 333 – Computer Programming
+* **Module Leader:** Mr. Nishan Saliya
+* **Institution:** Informatics Institute of Technology
