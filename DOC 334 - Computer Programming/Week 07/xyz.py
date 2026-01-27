@@ -1,3 +1,5 @@
+# Open Text Doc
+  
 fh = open("xyz.txt","r")
 c = 0
 while c<20:
