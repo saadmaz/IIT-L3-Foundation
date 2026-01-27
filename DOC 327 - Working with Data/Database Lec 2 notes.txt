@@ -1,0 +1,63 @@
+If you dont update data, it will/might show data errors.
+
+
+slide 12
+
+can gain unauthorize access and edit data.
+
+
+Slide 13
+
+- The fact of allowing more than one user to use a computer system at the same time: The licence type you choose will depend on the number of people requiring concurrent access.
+- Banking system 
+
+slide 14
+- 
+
+
+old DB
+- cant access by more than 2 users.
+- one after the other can use 
+- have to be manually updated 
+
+DB concept 
+- 
+
+
+Database 
+(Repositoroy data)
+There are inter-related databases 
+
+A collection of records are a dataset. 
+A collection of datasets is a database.
+
+
+example:
+in a uni, 
+lecturer data, student data, finance data are datasets, a collection of these datasets are called a database. 
+
+DBMS is a platform that allows you to communicate with these databases.
+
+In modern daabases concurren access is available.
+if you can acess the internet, you can access the databases. 
+Duplications have been minimised, compared to manual ones. 
+
+
+Metadata - a set of data that describes and gives information about other data. 
+slide 19 explains metadata in detail. 
+
+find information of slide 20.
+
+
+Advantages of databases. 
+- Minimum data redundancy.
+- Improved data security.
+- Increased consistency.
+- Lower updating errors.
+- Reduced costs of data entry, data storage, and data retrieval.
+- Improved data access using host and query languages.
+- Higher data integrity from application programs.
+
+
+
+
