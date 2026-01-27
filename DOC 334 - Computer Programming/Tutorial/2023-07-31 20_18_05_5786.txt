@@ -1,0 +1,8 @@
+Date: 2023-07-31
+Time: 20:18:05.902909
+Start: Alvin
+End: Razi
+Amount: 80 KMD
+Promo: 0 KMD
+Random Reduction: 5 KMD
+Final payment: 75 KMD
