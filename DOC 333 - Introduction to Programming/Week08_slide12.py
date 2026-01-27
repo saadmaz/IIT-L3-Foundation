@@ -1,3 +1,5 @@
+# Week08_slide12.py
+
 import mariadb
 
 # Open database connection

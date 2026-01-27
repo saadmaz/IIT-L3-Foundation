@@ -1,3 +1,8 @@
+# Taxgov.py
+
+# billing calculator that takes a base amount and adds a tip and tax to 
+# determine the total cost.
+
 bill = 0
 
 def tip(value):
