@@ -1,9 +1,0 @@
-Date: 2023-07-31
-Time: 20:49:48.614984
-Start: Razi
-End: Razi
-Amount: 0 KMD
-
-Promo: 0 KMD
-Random Reduction: 0 KMD
-Final payment: 0 KMD

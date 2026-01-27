@@ -1,9 +1,0 @@
-Date: 2023-07-31
-Time: 21:20:49.900927
-Start: Razi
-End: Mali
-Amount: 40 KMD
-
-Promo: 5 KMD
-Random Reduction: 0 KMD
-Final payment: 35 KMD
