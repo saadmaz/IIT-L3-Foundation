@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Courseware - 13 A4 Pages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --a4-width: 210mm;
+            --a4-height: 297mm;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #cbd5e1;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* A4 Page Styling */
+        .a4-page {
+            width: var(--a4-width);
+            height: var(--a4-height);
+            background: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 20mm;
+            page-break-after: always;
+        }
+
+        /* Responsive scaling for viewing on smaller screens */
+        @media (max-width: 215mm) {
+            body {
+                padding: 10px 0;
+                gap: 20px;
+            }
+
+            .a4-page {
+                width: 95vw;
+                height: 134.35vw;
+                padding: 8vw;
+            }
+        }
+
+        /* Printing logic */
+        @media print {
+            body {
+                background: none !important;
+                padding: 0 !important;
+                gap: 0 !important;
+            }
+
+            .a4-page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                border: none !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .math-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+
+        .option-box {
+            transition: background-color 0.2s;
+        }
+
+        .option-box:hover {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header for Web View -->
+    <div class="no-print w-full max-w-[210mm] px-4 mb-4 flex justify-between items-end">
+        <div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Discrete Mathematics</h1>
+            <p class="text-slate-600 font-medium">Complete Quiz Revision Set • 13 Slides</p>
+        </div>
+        <button onclick="window.print()"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg font-bold flex items-center gap-2 transition-all shadow-lg active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Print Slides
+        </button>
+    </div>
+
+    <div id="pagesContainer" class="flex flex-col gap-10">
+        <!-- Slides will be injected here by Javascript -->
+    </div>
+
+    <script>
+        const slides = [
+            { id: 1, title: "Question 1", content: "Which of the following is true?", options: ["A) ∅ ⊆ (1, 3)", "B) ∅ ⊆ [1, 3)", "C) ∅ ⊆ {1, 3}", "D) {1, 3} ⊆ ∅"] },
+            { id: 4, title: "Question 4", content: "We know that if a knowledge base KB has two components A and B then to check if C is a logical consequence from KB we assemble the formula \"If (A and B) then C\" and then based on the classification of this formula determine if there is a logical consequence of C from KB. Determine which one of the following cases represents logical consequence between the knowledge base KB and a statement C.", options: ["A) KB = {p ⇒ q, q ∧ ¬p}, C = p", "B) KB = {¬p ⇒ q, ¬p}, C = p ∧ q", "C) KB = {p ⇒ q, q ⇒ r}, C = p ⇒ r", "D) KB = {p ⇒ ¬q, ¬q}, C = p ∧ q"] },
+            { id: 5, title: "Question 5", content: "A graph G is defined as follows: V = {a, b, c, d, e} and E = {{a, b}, {b, c}, {c, d}, {e, e}}. Which statement below is true in relation to this graph?", options: ["A) G is acyclic", "B) G is disconnected", "C) G has five edges", "D) G has four nodes"] },
+            { id: 8, title: "Question 8", content: "The only values for the variables p and q which make the formula ¬(p ⇒ q) true are:", options: ["A) p is TRUE, q is FALSE", "B) p is FALSE, q is TRUE", "C) p is FALSE, q is FALSE", "D) p is TRUE, q is TRUE"] },
+            { id: 9, title: "Question 9", content: "Let A = {p, q} and B = {0, 1}. Which of the following relations is a function with domain A and co-domain B?", options: ["A) {(p, 0), (q, 1), (q, 0)}", "B) {(p, 1), (q, 0)}", "C) {(p, q), (0, 1)}", "D) {(p, 1), (q, 0), (p, 0)}"] },
+            { id: 11, title: "Question 11", content: "How many rows would be in the truth table for the formula? ¬(¬p ⇒ (q ∧ ¬q) ∨ (¬r ⇒ (s ∨ ¬s)))", options: ["A) 6", "B) 8", "C) 4", "D) 16"] },
+            { id: 12, title: "Question 12", content: "Which set below is defined by the following notation, where Z is a set of integers: {x ∈ Z : x³ = -8}", options: ["A) {-2}", "B) {2}", "C) ∅", "D) {-2, 2}"] },
+            { id: 13, title: "Question 13", content: "Let A be the interval [2, 5]. Which of the following is the set satisfying the condition {x ∈ A : x² ∈ A}?", options: ["A) {4, 5}", "B) [2, √5]", "C) (2, 5)", "D) ∅"] },
+            { id: 14, title: "Question 14", content: "What is the result of the following operation: (1, 10) ∩ {10}", options: ["A) (1, 10)", "B) (1, 10]", "C) ∅", "D) {1, 10}"] },
+            { id: 15, title: "Question 15", content: "Consider the following formula: ¬(¬(p ⇒ q) ∨ (q ⇒ p)). What is the correct answer to the question: which input values for the variables p and q result in the value \"FALSE\" in the final column of the truth table.", options: ["A) None of the input values for the variables p and q result in the value \"FALSE\"", "B) Only when p is FALSE and q is FALSE", "C) All of the input values for the variables p and q result in the value \"FALSE\"", "D) Only when p is TRUE and q is FALSE"] },
+            { id: 16, title: "Question 16", content: "Which set builder notation below defines the interval (1, 100]?", options: ["A) {x ∈ R : 1 ≤ x and x ≤ 100}", "B) {x ∈ R : 1 < x and x < 100}", "C) {x ∈ R : 1 ≤ x and x < 100}", "D) {x ∈ R : 1 < x and x ≤ 100}"] },
+            { id: 18, title: "Question 18", content: "You are given the relation R = {(a, 0), (b, 1), (c, 1)} as a subset of A × B. In which situation is this relation a function with the domain A and co-domain B?", options: ["A) A = {a, b, c}, B = ∅", "B) A = {a, b, c}, B = {0}", "C) A = {a, b, c}, B = {1, 0}", "D) A = {a, b, c, d}, B = {1, 0}"] },
+            { id: 20, title: "Question 20", content: "Let A = {a, b, c, d, e} and B = {d, e, f, g, h, i}. The cardinality of the set |B × A \\ A × B| is", options: ["A) 0", "B) 30", "C) 4", "D) 26"] }
+        ];
+
+        function init() {
+            const container = document.getElementById('pagesContainer');
+            if (!container) return;
+
+            slides.forEach((slide, index) => {
+                const page = document.createElement('div');
+                page.className = 'a4-page';
+
+                // Helper to format math-heavy text
+                const formatMath = (text) => {
+                    return text.replace(/([pqrstABCDEFGVZE]|∅|⊆|⇒|¬|∧|∨|∈|∩|\\|×|³|≤|√)/g, '<span class="math-text">$1</span>');
+                };
+
+                page.innerHTML = `
+                    <div class="mb-10">
+                        <div class="text-indigo-600 font-bold tracking-[0.3em] text-sm mb-3 uppercase">Slide ${index + 1}</div>
+                        <h2 class="text-3xl font-extrabold text-slate-900 border-b-2 border-slate-100 pb-5">${slide.title}</h2>
+                    </div>
+
+                    <div class="flex-1">
+                        <div class="bg-slate-50 border-l-4 border-indigo-600 p-8 rounded-r-2xl mb-12 text-2xl text-slate-800 leading-relaxed font-medium">
+                            ${formatMath(slide.content)}
+                        </div>
+
+                        <div class="space-y-4">
+                            ${slide.options.map((opt, i) => `
+                                <div class="option-box p-6 border border-slate-200 rounded-xl text-xl text-slate-700 flex items-center gap-5">
+                                    <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-lg shrink-0 border border-indigo-100">
+                                        ${String.fromCharCode(65 + i)}
+                                    </div>
+                                    <div class="font-medium">
+                                        ${formatMath(opt.substring(3))}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="page-number">
+                        DISCRETE MATHEMATICS & LOGIC • SLIDE ${index + 1} OF 13
+                    </div>
+                `;
+
+                container.appendChild(page);
+            });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+
+</html>
