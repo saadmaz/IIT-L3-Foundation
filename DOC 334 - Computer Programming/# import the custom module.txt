@@ -1,0 +1,13 @@
+# import the custom module 
+import matrix.algo 
+
+matrix.algo.getMatrixSize ()
+matrix.algo.breakvalues()
+print()
+matrix.algo.readValues()
+matrix.algo.displayMatrix()
+print()
+print()
+matrix.algo.multiplyMatrix()
+print()
+matrix.algo.displayMatrix()
