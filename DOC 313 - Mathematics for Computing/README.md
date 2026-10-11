@@ -1,6 +1,6 @@
 # 🧮 Mathematics for Computing (4COSC007C) 🧠
 
-This repository contains comprehensive materials for the Mathematics for Computing module at the Informatics Institute of Technology. From logic foundations to matrix operations, you'll find lecture notes, tutorial exercises, exam prep resources, and reference guides—all neatly organized by topic for easy access.
+This repository contains comprehensive materials for the Mathematics for Computing module at the Informatics Institute of Technology. From logic foundations to matrix operations, you'll find lecture notes, tutorial exercises, exam prep resources, and reference guides, all neatly organized by topic for easy access.
 
 ## 📚 Repository Structure
 
